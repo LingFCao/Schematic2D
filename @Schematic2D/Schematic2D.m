@@ -159,7 +159,7 @@ classdef Schematic2D < handle
         
         % testing purpose only, set to false for release (DO NOT MODIFY
         % THIS PROPERTY!)
-        testOverrideAnyInputPaths                   = true;
+        testOverrideAnyInputPaths                   = false;
     end
     properties(SetAccess = private,  Hidden)
         % display resolution in pixels
