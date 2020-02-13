@@ -1,0 +1,3 @@
+function internalAssignKeys( obj, ~, ~ )
+% bring up the key assignment panel ...
+obj.keyMap.initializeCompt();

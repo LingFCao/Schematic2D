@@ -1,0 +1,4 @@
+function defaultpath = testReturnDefaultPath()
+
+defaultpath = '';
+
