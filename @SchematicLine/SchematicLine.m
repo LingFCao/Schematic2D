@@ -174,10 +174,14 @@ classdef SchematicLine < AbstractSchematicComponent
             % the text-box is already created ... 
             GrandAxes = obj.parent.parent.Axs;
 %             GrandFigu = obj.parent.parent.Fig;
-            x0 = GrandAxes.XLim(1);
-            x1 = GrandAxes.XLim(2);
-            y0 = GrandAxes.YLim(1); 
-            y1 = GrandAxes.YLim(2);
+            %x0 = GrandAxes.XLim(1);
+            %x1 = GrandAxes.XLim(2);
+            %y0 = GrandAxes.YLim(1); 
+            %y1 = GrandAxes.YLim(2);
+            x0 = obj.parent.archivedXLim(1);
+            x1 = obj.parent.archivedXLim(2);
+            y0 = obj.parent.archivedYLim(1);
+            y1 = obj.parent.archivedYLim(2);
             % also, we assume that 'newPosition' is within the axes' limit
             x  = newPosition(1); 
             y  = newPosition(2);
@@ -200,11 +204,17 @@ classdef SchematicLine < AbstractSchematicComponent
             GrandAxes = obj.parent.parent.Axs;
             GrandFigu = obj.parent.parent.Fig;
             
-            x0 = GrandAxes.XLim(1);
-            x1 = GrandAxes.XLim(2); 
+            %x0 = GrandAxes.XLim(1);
+            %x1 = GrandAxes.XLim(2); 
 
-            y0 = GrandAxes.YLim(1); 
-            y1 = GrandAxes.YLim(2);
+            %y0 = GrandAxes.YLim(1); 
+            %y1 = GrandAxes.YLim(2);
+            
+            x0 = obj.parent.archivedXLim(1);
+            x1 = obj.parent.archivedXLim(2);
+            
+            y0 = obj.parent.archivedYLim(1);
+            y1 = obj.parent.archivedYLim(2);
             
             x = position(1); 
             y = position(2);
@@ -228,7 +238,7 @@ classdef SchematicLine < AbstractSchematicComponent
                 obj.currentTextboxPropertyCell{:} );
             % revert back to the default axis limit, in cases this is not
             % done automatically 
-            obj.parent.parent.aaxis( [x0, x1, y0, y1] );
+            obj.parent.parent.aaxis( [GrandAxes.XLim, GrandAxes.YLim] );
         end
         function turn( obj, state )
             %
