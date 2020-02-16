@@ -1,5 +1,7 @@
 # Schematic2D
 
+[![View Schematic2D on File Exchange](https://www.mathworks.com/matlabcentral/images/matlab-file-exchange.svg)](https://uk.mathworks.com/matlabcentral/fileexchange/74258-schematic2d)
+
 This is a MATLAB implementation of a drawing canvas which provides the tools needed to create professional-looking diagrams.
 The motivation of creating such a tool arose from the frustration of finding a suitable software that a) is simple to use (in the 
 sense of containing no frills, just the absolute essential) and b) has the ability to have absolute control over the image output. 
