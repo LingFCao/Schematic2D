@@ -17,8 +17,12 @@ currentCaptureStateIsOn = obj.EnableCapture;
 % disable the current capture state ...
 if currentCaptureStateIsOn, obj.setEnableCapture( 'off' ); end
 
-xlim = obj.parent.Axs.XLim;
-ylim = obj.parent.Axs.YLim;
+%xlim = obj.parent.Axs.XLim;
+%ylim = obj.parent.Axs.YLim;
+% those values will be used instead to correct the zoom behaviour when adding points while zoom is active
+xlim = obj.archivedXLim;
+ylim = obj.archivedYLim;
+
 
 pointIsInCanvas = ...
     ( xlim(1) <= ClickPosition(1) && ClickPosition(1) <= xlim(2) ) && ...
@@ -62,6 +66,8 @@ if pointIsInCanvas
     end
     
     % reset back to the original limit if it is being done so already
+    xlim = obj.parent.Axs.XLim;
+    ylim = obj.parent.Axs.YLim;
     obj.parent.aaxis( [xlim, ylim] );
 else
     warning( ...
