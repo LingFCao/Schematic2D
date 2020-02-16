@@ -12,11 +12,17 @@ defaultLineContainer = obj.rightLine;
 GrandAxes = obj.parent.parent.Axs;
 GrandFigu = obj.parent.parent.Fig;
 
-x0 = GrandAxes.XLim(1);
-x1 = GrandAxes.XLim(2); 
+%x0 = GrandAxes.XLim(1);
+%x1 = GrandAxes.XLim(2); 
 
-y0 = GrandAxes.YLim(1); 
-y1 = GrandAxes.YLim(2);
+%y0 = GrandAxes.YLim(1); 
+%y1 = GrandAxes.YLim(2);
+
+x0 = obj.parent.archivedXLim(1);
+x1 = obj.parent.archivedXLim(2);
+
+y0 = obj.parent.archivedYLim(1);
+y1 = obj.parent.archivedYLim(2);
 
 x  = startPosition(1); 
 y  = startPosition(2); 
@@ -68,5 +74,5 @@ else
 end
 
 % revert back to the original limit
-obj.parent.parent.aaxis( [x0, x1, y0, y1] );
+obj.parent.parent.aaxis( [GrandAxes.XLim, GrandAxes.YLim] );
 
